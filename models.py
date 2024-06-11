@@ -1,8 +1,8 @@
+from datetime import datetime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, Table, Column, Integer, String, ForeignKey, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
 
 
 Base = declarative_base()
