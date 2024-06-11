@@ -4,6 +4,7 @@ from models import Job, engine, Base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
+
 BASE_URL = 'http://127.0.0.1:5000/api/jobs'
 
 Session = sessionmaker(bind=engine)
