@@ -4,11 +4,13 @@ from sqlalchemy.orm import sessionmaker, joinedload
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import User, Job, Category, Department, engine
 from jobs_api import api as jobs_api_blueprint
+from user_api import user_api as user_api_blueprint
 
 
 app = Flask(__name__)
 app.secret_key = 'top_secret_key'
 app.register_blueprint(jobs_api_blueprint)
+app.register_blueprint(user_api_blueprint)
 
 Session = sessionmaker(bind=engine)
 
