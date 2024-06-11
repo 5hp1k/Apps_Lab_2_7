@@ -1,12 +1,14 @@
+from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, session
 from sqlalchemy.orm import sessionmaker, joinedload
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
 from models import User, Job, Category, Department, engine
+from jobs_api import api as jobs_api_blueprint
 
 
 app = Flask(__name__)
 app.secret_key = 'top_secret_key'
+app.register_blueprint(jobs_api_blueprint)
 
 Session = sessionmaker(bind=engine)
 
